@@ -264,10 +264,7 @@ body {
 
 /* ===== Navigation - MOBILE FIRST ===== */
 .c-main-navigation {
-    position: fixed;
-    top: 0;  /* TOP on mobile (2025 best practice) */
-    left: 0;
-    right: 0;
+    position: relative;  /* Scrolls with page - only visible at top */
     z-index: var(--z-header);
     padding: var(--spacer);
     pointer-events: none;
@@ -276,8 +273,6 @@ body {
 
 @media (min-width: 768px) {
     .c-main-navigation {
-        /* Keep fixed position on desktop too */
-        position: fixed;
         padding: var(--spacer-rg) var(--spacer);
     }
 }
@@ -481,13 +476,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12rem 2rem 6rem;  /* Top padding accounts for fixed nav */
+    padding: 6rem 2rem;  /* Reduced padding since nav scrolls with page */
     min-height: 100dvh;  /* Dynamic viewport height - 2025 best practice */
     min-height: 100vh;  /* Fallback for older browsers */
     position: relative;
-    background: linear-gradient(rgba(26, 26, 29, 0.85), rgba(26, 26, 29, 0.85)),
-                url('./assets/images/elevator-service.jpg') center center / cover no-repeat;
-    background-attachment: scroll;  /* Better for mobile performance */
+    background: var(--color-bg-secondary);  /* Solid dark background */
 }
 
 /* Subtle dot pattern overlay */
@@ -504,10 +497,10 @@ body {
     opacity: 0.5;
 }
 
-/* Desktop: proper padding for fixed nav */
+/* Desktop: less padding */
 @media (min-width: 768px) {
     .hero {
-        padding: 12rem 0 8rem;
+        padding: 8rem 0;
         min-height: 80vh;  /* Taller on desktop */
     }
 }
@@ -845,16 +838,27 @@ section > .l-container {
     background: var(--color-Pampas);
 }
 
-/* Lift Services - darker black background for harsh contrast with hero */
+/* Lift Services - background image with dark overlay */
 .lift-services {
-    background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%) !important;
+    background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(5, 5, 5, 0.85)),
+                url('./assets/images/elevator-service.jpg') center center / cover no-repeat !important;
+    background-attachment: scroll !important;
     padding-top: 6rem !important;
+    position: relative;
 }
 
 @media (min-width: 768px) {
     .lift-services {
         padding-top: 8rem !important;
     }
+}
+
+/* Escalator Services - background image with dark overlay */
+.escalator-services {
+    background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(5, 5, 5, 0.85)),
+                url('./assets/images/elevator-service.jpg') center center / cover no-repeat !important;
+    background-attachment: scroll !important;
+    position: relative;
 }
 
 .services-split {

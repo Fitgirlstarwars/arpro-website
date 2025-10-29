@@ -276,9 +276,9 @@ body {
 
 @media (min-width: 768px) {
     .c-main-navigation {
-        position: relative;
-        top: auto;
-        padding: var(--spacer-rg) 0;
+        /* Keep fixed position on desktop too */
+        position: fixed;
+        padding: var(--spacer-rg) var(--spacer);
     }
 }
 
@@ -504,10 +504,10 @@ body {
     opacity: 0.5;
 }
 
-/* Desktop: less padding, relative nav */
+/* Desktop: proper padding for fixed nav */
 @media (min-width: 768px) {
     .hero {
-        padding: 8rem 0;
+        padding: 12rem 0 8rem;
         min-height: 80vh;  /* Taller on desktop */
     }
 }

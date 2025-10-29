@@ -471,6 +471,20 @@ body {
     }
 }
 
+/* Portrait mode specific (phone vertical) */
+@media (max-width: 767.98px) and (orientation: portrait) {
+    .hero {
+        min-height: 55vh;  /* Optimized height for portrait */
+        padding: 5rem 0 5rem;
+        background-position: 50% 20%;  /* Focus on upper-center area */
+        background-size: cover;  /* Maintain cover for consistent look */
+    }
+
+    .hero-title {
+        font-size: clamp(3.5rem, 10vw, 6rem);  /* Slightly smaller for portrait */
+    }
+}
+
 .hero-container {
     max-width: 100%;
     margin: 0 auto;

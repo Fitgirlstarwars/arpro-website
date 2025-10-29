@@ -442,7 +442,9 @@ body {
     padding: 8rem 0 8rem;
     min-height: 70vh;
     position: relative;
-    background: #1a1a1d;  /* Match navigation bar color at the very top */
+    background: linear-gradient(rgba(26, 26, 29, 0.85), rgba(26, 26, 29, 0.85)),
+                url('./assets/images/elevator-service.jpg') center center / cover no-repeat;
+    background-attachment: scroll;  /* Better for mobile performance */
 }
 
 /* Subtle dot pattern overlay */
@@ -463,6 +465,9 @@ body {
     .hero {
         padding: 6rem 0 6rem;
         min-height: 60vh;
+        background-position: top center;  /* Keep image at top on mobile */
+        background-size: cover;
+        background-attachment: scroll;
     }
 }
 
@@ -499,6 +504,7 @@ body {
     margin-bottom: var(--spacer-rg);
     line-height: var(--lh-5xs);
     color: #ffffff;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 4px 40px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transform: translateY(30px);
     animation: heroEnter 0.8s ease-out 0.2s forwards;
@@ -510,6 +516,7 @@ body {
     font-weight: 400;
     margin-bottom: var(--spacer-xl);
     line-height: var(--lh-sm);
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
     opacity: 0;
     transform: translateY(30px);
     animation: heroEnter 0.8s ease-out 0.4s forwards;

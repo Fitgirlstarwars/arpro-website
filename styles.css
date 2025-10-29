@@ -843,67 +843,51 @@ section > .l-container {
     background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(5, 5, 5, 0.85)),
                 url('./assets/images/elevator-service.jpg') center center / cover no-repeat !important;
     background-attachment: scroll !important;
-    padding-top: 6rem !important;
+    padding: 6rem 0 !important;
+    min-height: 60vh;
     position: relative;
 }
 
 @media (min-width: 768px) {
     .lift-services {
-        padding-top: 8rem !important;
+        padding: 10rem 0 !important;
+        min-height: 80vh;
     }
 }
 
 /* Escalator Services - background image with dark overlay */
 .escalator-services {
     background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(5, 5, 5, 0.85)),
-                url('./assets/images/elevator-service.jpg') center center / cover no-repeat !important;
+                url('./assets/images/escalator-service.jpg') center center / cover no-repeat !important;
     background-attachment: scroll !important;
+    padding: 6rem 0 !important;
+    min-height: 60vh;
     position: relative;
 }
 
+@media (min-width: 768px) {
+    .escalator-services {
+        padding: 10rem 0 !important;
+        min-height: 80vh;
+    }
+}
+
 .services-split {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacer-lg);
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-/* Mobile-first: Images appear first for better visual hierarchy */
-.services-split .services-content {
-    order: 2;
-}
-
-.services-split .services-image {
-    order: 1;
-}
-
-@media (min-width: 968px) {
-    .services-split {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacer-3xl);
-    }
-
-    /* Desktop: Lift services - content left, image right */
-    .lift-services .services-content {
-        order: 1;
-    }
-
-    .lift-services .services-image {
-        order: 2;
-    }
-
-    /* Desktop: Escalator services - image left, content right */
-    .escalator-services .services-image {
-        order: 1;
-    }
-
-    .escalator-services .services-content {
-        order: 2;
-    }
-}
-
 .services-content {
-    max-width: 60rem;
+    max-width: 80rem;
+    width: 100%;
+    padding: 0 var(--spacer);
+}
+
+@media (min-width: 768px) {
+    .services-content {
+        padding: 0;
+    }
 }
 
 .services-list {

@@ -262,23 +262,22 @@ body {
     }
 }
 
-/* ===== Navigation ===== */
+/* ===== Navigation - MOBILE FIRST ===== */
 .c-main-navigation {
     position: fixed;
-    top: auto;
-    bottom: 0;
+    top: 0;  /* TOP on mobile (2025 best practice) */
     left: 0;
     right: 0;
     z-index: var(--z-header);
     padding: var(--spacer);
     pointer-events: none;
+    background: transparent;
 }
 
 @media (min-width: 768px) {
     .c-main-navigation {
         position: relative;
         top: auto;
-        bottom: auto;
         padding: var(--spacer-rg) 0;
     }
 }
@@ -355,14 +354,39 @@ body {
 }
 
 .nav-menu {
-    display: none;
+    display: none;  /* Hidden by default on mobile */
     align-items: center;
     gap: var(--spacer-md);
 }
 
+/* Mobile menu when active (hamburger clicked) */
+.nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(30, 30, 30, 0.98);
+    backdrop-filter: blur(12px);
+    padding: var(--spacer-rg);
+    border-radius: var(--radius-rg);
+    margin-top: var(--spacer-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Desktop: always visible in row */
 @media (min-width: 768px) {
     .nav-menu {
-        display: flex;
+        display: flex !important;
+        flex-direction: row;
+        position: relative;
+        background: transparent;
+        padding: 0;
+        margin-top: 0;
+        border: none;
+        box-shadow: none;
     }
 }
 
@@ -412,13 +436,15 @@ body {
     gap: 0.5rem;
     background: var(--color-White);
     border: none;
-    padding: var(--spacer-sm);
+    padding: 1.2rem;
     border-radius: var(--radius-xs);
     cursor: pointer;
-    min-width: 6rem;
-    min-height: 6rem;
+    min-width: 4.8rem;  /* 48px - 2025 touch target minimum */
+    min-height: 4.8rem;  /* 48px - 2025 touch target minimum */
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1000;
 }
 
 @media (min-width: 768px) {
@@ -428,19 +454,36 @@ body {
 }
 
 .mobile-toggle span {
-    width: 1rem;
-    height: 0.2rem;
+    width: 2.4rem;  /* Larger for better visibility */
+    height: 0.3rem;  /* Thicker lines */
     background: var(--color-Black);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0.2rem;
+    display: block;
 }
 
-/* ===== Hero Section ===== */
+/* X animation when active */
+.mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.8rem, 0.8rem);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-2rem);
+}
+
+.mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.8rem, -0.8rem);
+}
+
+/* ===== Hero Section - MOBILE FIRST ===== */
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8rem 0 8rem;
-    min-height: 70vh;
+    padding: 12rem 2rem 6rem;  /* Top padding accounts for fixed nav */
+    min-height: 100dvh;  /* Dynamic viewport height - 2025 best practice */
+    min-height: 100vh;  /* Fallback for older browsers */
     position: relative;
     background: linear-gradient(rgba(26, 26, 29, 0.85), rgba(26, 26, 29, 0.85)),
                 url('./assets/images/elevator-service.jpg') center center / cover no-repeat;
@@ -461,27 +504,11 @@ body {
     opacity: 0.5;
 }
 
-@media (max-width: 767.98px) {
+/* Desktop: less padding, relative nav */
+@media (min-width: 768px) {
     .hero {
-        padding: 6rem 0 6rem;
-        min-height: 60vh;
-        background-position: top center;  /* Keep image at top on mobile */
-        background-size: cover;
-        background-attachment: scroll;
-    }
-}
-
-/* Portrait mode specific (phone vertical) */
-@media (max-width: 767.98px) and (orientation: portrait) {
-    .hero {
-        min-height: 55vh;  /* Optimized height for portrait */
-        padding: 5rem 0 5rem;
-        background-position: 50% 20%;  /* Focus on upper-center area */
-        background-size: cover;  /* Maintain cover for consistent look */
-    }
-
-    .hero-title {
-        font-size: clamp(3.5rem, 10vw, 6rem);  /* Slightly smaller for portrait */
+        padding: 8rem 0;
+        min-height: 80vh;  /* Taller on desktop */
     }
 }
 

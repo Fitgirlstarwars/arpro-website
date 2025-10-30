@@ -269,6 +269,8 @@ body {
     padding: var(--spacer);
     pointer-events: none;
     background: transparent;
+    border: none;
+    outline: none;
 }
 
 @media (min-width: 768px) {
@@ -280,6 +282,8 @@ body {
 .c-main-navigation-menu {
     position: relative;
     pointer-events: all;
+    border: none;
+    outline: none;
 }
 
 .c-main-navigation-menu-button {
@@ -295,6 +299,7 @@ body {
     z-index: 2;
     border: none;  /* Remove border line */
     box-shadow: none;  /* Remove shadow line */
+    outline: none;  /* Remove any outline */
     transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -362,13 +367,13 @@ body {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(30, 30, 30, 0.98);
-    backdrop-filter: blur(12px);
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(16px);
     padding: var(--spacer-rg);
     border-radius: var(--radius-rg);
     margin-top: var(--spacer-sm);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    border: none;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* Desktop: always visible in row */

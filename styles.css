@@ -732,23 +732,23 @@ section > .l-container {
 
 .section-label {
     display: inline-block;
-    font-size: var(--fs-reg);  /* Smaller on mobile for better readability */
+    font-size: clamp(3.5rem, 5vw, 6.5rem);  /* Largest text - main heading */
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.05em;
     color: var(--color-Manatee);
     margin-bottom: var(--spacer-sm);
+    line-height: var(--lh-4xs);
 }
 
 @media (min-width: 768px) {
     .section-label {
-        font-size: var(--fs-lg);
         margin-bottom: var(--spacer-rg);
     }
 }
 
 .section-title {
-    font-size: clamp(3rem, 4vw, 5.5rem);
+    font-size: clamp(2rem, 3vw, 3.5rem);  /* Smaller - secondary text */
     font-weight: 400;
     letter-spacing: -0.02em;
     margin-bottom: var(--spacer-rg);

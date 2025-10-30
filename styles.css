@@ -480,21 +480,71 @@ body {
     min-height: 100dvh;  /* Dynamic viewport height - 2025 best practice */
     min-height: 100vh;  /* Fallback for older browsers */
     position: relative;
-    background: var(--color-bg-secondary);  /* Solid dark background */
+    overflow: hidden;
+    background: #000;  /* Fallback black background */
 }
 
-/* Subtle dot pattern overlay */
-.hero::before {
-    content: '';
+/* Video Background Container */
+.hero-video-background {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(circle, rgba(200, 200, 200, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Individual Video Styling */
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: videoFade 15s infinite;
+}
+
+/* Stagger the video animations */
+.hero-video:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero-video:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.hero-video:nth-child(3) {
+    animation-delay: 10s;
+}
+
+/* Video fade animation - smooth transitions */
+@keyframes videoFade {
+    0% { opacity: 0; }
+    6.66% { opacity: 1; }
+    33.33% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Mobile: Stack videos vertically */
+@media (max-width: 768px) {
+    .hero-video-background {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+/* Dark overlay over videos */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(5, 5, 5, 0.7));
+    z-index: 1;
     pointer-events: none;
-    opacity: 0.5;
 }
 
 /* Desktop: less padding */
@@ -510,7 +560,7 @@ body {
     margin: 0 auto;
     padding: 0 var(--container-gap-base);
     position: relative;
-    z-index: 2;  /* Above gradient overlay (z-index: 1) */
+    z-index: 2;  /* Above video overlay (overlay is z-index: 1) */
 }
 
 @media (min-width: 768px) {

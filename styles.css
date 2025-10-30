@@ -266,9 +266,7 @@ body {
 .c-main-navigation {
     position: relative;  /* Scrolls with page - only visible at top */
     z-index: var(--z-header);
-    padding: 0 var(--spacer);  /* No top/bottom padding - flush with top */
-    padding-top: 0;
-    padding-bottom: var(--spacer);
+    padding: var(--spacer);  /* Restore original padding */
     pointer-events: none;
     background: transparent;
     border: none;
@@ -277,9 +275,7 @@ body {
 
 @media (min-width: 768px) {
     .c-main-navigation {
-        padding: 0 var(--spacer);
-        padding-top: 0;
-        padding-bottom: var(--spacer-rg);
+        padding: var(--spacer-rg) var(--spacer);
     }
 }
 
@@ -304,6 +300,9 @@ body {
     border: none;  /* Remove border line */
     box-shadow: none;  /* Remove shadow line */
     outline: none;  /* Remove any outline */
+    overflow: hidden;  /* Fix backdrop-filter + border-radius bug */
+    filter: brightness(100%);  /* Fix WebKit edge artifacts */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);  /* Fix Safari backdrop-filter bug */
     transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 

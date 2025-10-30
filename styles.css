@@ -326,7 +326,9 @@ body {
     align-items: center;
     gap: var(--spacer-sm);
     transition: transform 0.3s ease;
-    background: transparent;  /* Transparent background */
+    background: none !important;  /* No background - blend with banner */
+    padding: 0;
+    border: none;
 }
 
 .logo:hover {
@@ -338,8 +340,9 @@ body {
     height: 6.3rem;  /* 63px - 5% larger (60px * 1.05) */
     width: auto;
     transition: opacity 0.3s ease;
-    background: transparent;  /* Transparent background */
-    mix-blend-mode: normal;  /* Normal blending */
+    background: none !important;  /* No background */
+    padding: 0;
+    border: none;
 }
 
 /* Desktop: larger, more prominent logo */

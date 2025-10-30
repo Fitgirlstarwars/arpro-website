@@ -500,14 +500,14 @@ body {
     z-index: -1;  /* Behind everything */
 }
 
-/* Dark overlay over video - only in hero section */
+/* Light overlay over video - matches navigation transparency */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(5, 5, 5, 0.5));
+    background: linear-gradient(rgba(30, 30, 30, 0.3), rgba(20, 20, 20, 0.4));
     z-index: 0;
     pointer-events: none;
 }

@@ -266,7 +266,9 @@ body {
 .c-main-navigation {
     position: relative;  /* Scrolls with page - only visible at top */
     z-index: var(--z-header);
-    padding: var(--spacer);
+    padding: 0 var(--spacer);  /* No top/bottom padding - flush with top */
+    padding-top: 0;
+    padding-bottom: var(--spacer);
     pointer-events: none;
     background: transparent;
     border: none;
@@ -275,7 +277,9 @@ body {
 
 @media (min-width: 768px) {
     .c-main-navigation {
-        padding: var(--spacer-rg) var(--spacer);
+        padding: 0 var(--spacer);
+        padding-top: 0;
+        padding-bottom: var(--spacer-rg);
     }
 }
 

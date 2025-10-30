@@ -294,7 +294,7 @@ body {
     background-color: rgba(30, 30, 30, 0.7);  /* More transparent to show video */
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border-radius: var(--radius-rg);
+    border-radius: var(--radius-rg) var(--radius-rg) 0 0;  /* Only round TOP corners - flat bottom eliminates visible line */
     position: relative;
     z-index: 2;
     border: none;  /* Remove border line */

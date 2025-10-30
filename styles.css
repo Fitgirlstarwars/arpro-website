@@ -287,15 +287,14 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1.2rem var(--spacer-sm);  /* More vertical padding for larger logo */
-    background-color: rgba(30, 30, 30, 0.85);  /* Semi-transparent to show video behind */
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    background-color: rgba(30, 30, 30, 0.7);  /* More transparent to show video */
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
     border-radius: var(--radius-rg);
     position: relative;
     z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    /* No glow initially - only subtle depth shadow */
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    border: none;  /* Remove border line */
+    box-shadow: none;  /* Remove shadow line */
     transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -307,13 +306,11 @@ body {
 }
 
 .c-main-navigation-menu-button:hover {
-    border-color: rgba(77, 179, 230, 0.4);
-    /* Subtle outer glow on hover - bar color stays same */
+    background-color: rgba(30, 30, 30, 0.8);  /* Slightly less transparent on hover */
+    /* Subtle outer glow on hover */
     box-shadow:
-        0 0 20px rgba(77, 179, 230, 0.3),      /* Close glow - subtle */
-        0 0 40px rgba(77, 179, 230, 0.2),      /* Medium glow - subtle */
-        0 0 60px rgba(77, 179, 230, 0.1),      /* Far glow - very subtle */
-        0 2px 16px rgba(0, 0, 0, 0.06);        /* Depth shadow */
+        0 0 20px rgba(77, 179, 230, 0.15),      /* Close glow - very subtle */
+        0 0 40px rgba(77, 179, 230, 0.1);       /* Medium glow - very subtle */
 }
 
 .logo {
@@ -321,6 +318,7 @@ body {
     align-items: center;
     gap: var(--spacer-sm);
     transition: transform 0.3s ease;
+    background: transparent;  /* Transparent background */
 }
 
 .logo:hover {
@@ -332,6 +330,8 @@ body {
     height: 6.3rem;  /* 63px - 5% larger (60px * 1.05) */
     width: auto;
     transition: opacity 0.3s ease;
+    background: transparent;  /* Transparent background */
+    mix-blend-mode: normal;  /* Normal blending */
 }
 
 /* Desktop: larger, more prominent logo */

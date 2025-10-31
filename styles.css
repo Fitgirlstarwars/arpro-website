@@ -761,8 +761,21 @@ ul {
     object-fit: contain;
     object-position: center;
     opacity: 0.85;
-    transition: var(--transition-base);
+    transition: all 0.5s ease;
     display: block;
+    transform: scale(0.85);
+}
+
+/* Scale up logos as they move to center */
+.swiper-slide-active .partner-logo,
+.swiper-slide-next .partner-logo {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+.swiper-slide-prev .partner-logo {
+    transform: scale(0.95);
+    opacity: 0.9;
 }
 
 /* Visual balance adjustments for similar perceived size */

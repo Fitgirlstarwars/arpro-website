@@ -75,7 +75,7 @@ function initSwiper() {
 
         // Loop
         loop: true,
-        centeredSlides: false,
+        centeredSlides: true,
 
         // Autoplay - Continuous smooth scrolling
         autoplay: {
@@ -93,32 +93,35 @@ function initSwiper() {
         freeModeMomentum: false,
         allowTouchMove: true,
 
-        // Responsive Breakpoints - Optimized for mobile
+        // Responsive Breakpoints - Optimized for mobile with center scaling
         breakpoints: {
             // Mobile (320px and up)
             320: {
                 slidesPerView: 2.5,
                 slidesPerGroup: 1,
                 spaceBetween: 15,
-                centeredSlides: false,
+                centeredSlides: true,
             },
             // Small tablets (640px and up)
             640: {
                 slidesPerView: 3,
                 slidesPerGroup: 1,
                 spaceBetween: 20,
+                centeredSlides: true,
             },
             // Tablet (768px and up)
             768: {
                 slidesPerView: 3,
-                slidesPerGroup: 2,
+                slidesPerGroup: 1,
                 spaceBetween: 30,
+                centeredSlides: true,
             },
             // Desktop (1024px and up)
             1024: {
                 slidesPerView: 4,
-                slidesPerGroup: 2,
+                slidesPerGroup: 1,
                 spaceBetween: 40,
+                centeredSlides: true,
             },
         },
 

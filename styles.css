@@ -176,11 +176,6 @@ ul {
     height: 65px;
     width: auto;
     transition: all 0.3s ease;
-    filter: brightness(0) invert(1);
-}
-
-.header.scrolled .logo-img {
-    filter: none;
 }
 
 .nav__menu {
@@ -939,7 +934,6 @@ ul {
     height: 70px;
     width: auto;
     margin-bottom: var(--spacing-md);
-    filter: brightness(0) invert(1);
 }
 
 .footer__description {

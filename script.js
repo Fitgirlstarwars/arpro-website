@@ -20,21 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
 /* === NAVIGATION SCROLL EFFECT === */
 function initNavigation() {
     const header = document.getElementById('header');
-    const logo = document.querySelector('.logo-img');
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
-            // Switch to blue logo when header is white
-            if (logo) {
-                logo.src = 'assets/images/arpro-logo-blue.png';
-            }
         } else {
             header.classList.remove('scrolled');
-            // Switch back to white logo when header is transparent
-            if (logo) {
-                logo.src = 'assets/images/arpro-logo-white.png';
-            }
         }
     });
 }
@@ -77,15 +68,16 @@ function initSwiper() {
         loop: true,
         centeredSlides: false,
 
-        // Autoplay - Based on Escalated's 5000ms delay
+        // Autoplay - Continuous smooth scrolling
         autoplay: {
-            delay: 5000,
+            delay: 1,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
         },
 
-        // Speed
-        speed: 800,
+        // Speed - Slower for smooth continuous movement
+        speed: 3000,
+        freeMode: false,
 
         // Responsive Breakpoints - Optimized for mobile
         breakpoints: {

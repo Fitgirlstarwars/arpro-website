@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all features
     initNavigation();
     initMobileMenu();
-    initSwiper();
     initAOS();
     initLucideIcons();
     initContactForm();
@@ -60,78 +59,6 @@ function initMobileMenu() {
             navMenu.classList.remove('active');
             document.body.classList.remove('menu-open');
         });
-    });
-}
-
-/* === SWIPER CAROUSEL === */
-/* Based on Escalated's implementation */
-function initSwiper() {
-    // Partners Carousel
-    const partnersSwiper = new Swiper('.partnersSwiper', {
-        // Slides
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-        spaceBetween: 30,
-
-        // Loop
-        loop: true,
-        centeredSlides: true,
-
-        // Autoplay - Continuous smooth scrolling
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-        },
-
-        // Speed - Smooth transitions
-        speed: 1500,
-        allowTouchMove: true,
-        loopAdditionalSlides: 2,
-
-        // Responsive Breakpoints - Optimized for mobile with center scaling
-        breakpoints: {
-            // Mobile (320px and up)
-            320: {
-                slidesPerView: 2.5,
-                slidesPerGroup: 1,
-                spaceBetween: 15,
-                centeredSlides: true,
-            },
-            // Small tablets (640px and up)
-            640: {
-                slidesPerView: 3,
-                slidesPerGroup: 1,
-                spaceBetween: 20,
-                centeredSlides: true,
-            },
-            // Tablet (768px and up)
-            768: {
-                slidesPerView: 3,
-                slidesPerGroup: 1,
-                spaceBetween: 30,
-                centeredSlides: true,
-            },
-            // Desktop (1024px and up)
-            1024: {
-                slidesPerView: 4,
-                slidesPerGroup: 1,
-                spaceBetween: 40,
-                centeredSlides: true,
-            },
-        },
-
-        // Optional: Add pagination if needed
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-
-        // Optional: Add navigation arrows if needed
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
     });
 }
 

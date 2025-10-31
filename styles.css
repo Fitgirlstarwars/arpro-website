@@ -734,21 +734,46 @@ ul {
 }
 
 .partners__carousel {
-    max-width: 900px;
+    max-width: 100%;
     margin: 0 auto;
     padding: var(--spacing-lg) 0;
+    overflow: hidden;
 }
 
-.swiper-slide {
+/* Marquee container */
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Marquee animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-content {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+}
+
+/* Pause on hover */
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+.partner-item {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    padding: 20px;
-}
-
-.swiper-slide a {
-    display: block;
+    padding: 0 60px;
     text-decoration: none;
     cursor: pointer;
 }
@@ -757,47 +782,37 @@ ul {
     height: 50px;
     width: auto;
     max-width: 140px;
-    margin: 0 auto;
     object-fit: contain;
     object-position: center;
     opacity: 0.85;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     display: block;
-    transform: scale(0.85);
-}
-
-/* Scale up logos as they move to center */
-.swiper-slide-active .partner-logo,
-.swiper-slide-next .partner-logo {
-    transform: scale(1.15);
-    opacity: 1;
-}
-
-.swiper-slide-prev .partner-logo {
-    transform: scale(0.95);
-    opacity: 0.9;
-}
-
-/* Visual balance adjustments for similar perceived size */
-.swiper-slide:nth-child(1) .partner-logo {
-    height: 50px; /* KONE baseline */
-}
-
-.swiper-slide:nth-child(2) .partner-logo {
-    height: 48px; /* TK Elevator slightly smaller */
-}
-
-.swiper-slide:nth-child(3) .partner-logo {
-    height: 60px; /* Schindler larger - has emblem above text */
-}
-
-.swiper-slide:nth-child(4) .partner-logo {
-    height: 40px; /* OTIS smaller - bold and wide */
 }
 
 .partner-logo:hover {
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.1);
+}
+
+/* Visual balance adjustments for similar perceived size */
+.partner-item:nth-child(1) .partner-logo,
+.partner-item:nth-child(5) .partner-logo {
+    height: 50px; /* KONE baseline */
+}
+
+.partner-item:nth-child(2) .partner-logo,
+.partner-item:nth-child(6) .partner-logo {
+    height: 48px; /* TK Elevator slightly smaller */
+}
+
+.partner-item:nth-child(3) .partner-logo,
+.partner-item:nth-child(7) .partner-logo {
+    height: 60px; /* Schindler larger - has emblem above text */
+}
+
+.partner-item:nth-child(4) .partner-logo,
+.partner-item:nth-child(8) .partner-logo {
+    height: 40px; /* OTIS smaller - bold and wide */
 }
 
 /* === CONTACT SECTION === */
@@ -1004,6 +1019,38 @@ ul {
 .footer__copyright {
     font-size: var(--fs-sm);
     color: var(--color-grey-500);
+}
+
+.footer__links-social {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.technician-portal-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+.technician-portal-link:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.technician-portal-link i {
+    width: 18px;
+    height: 18px;
 }
 
 .footer__social {

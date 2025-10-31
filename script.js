@@ -20,12 +20,21 @@ document.addEventListener('DOMContentLoaded', function() {
 /* === NAVIGATION SCROLL EFFECT === */
 function initNavigation() {
     const header = document.getElementById('header');
+    const logo = document.querySelector('.logo-img');
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
+            // Switch to blue logo when header is white
+            if (logo) {
+                logo.src = 'assets/images/arpro-logo.png';
+            }
         } else {
             header.classList.remove('scrolled');
+            // Switch back to white logo when header is transparent/dark
+            if (logo) {
+                logo.src = 'assets/images/arpro-logo-white.png';
+            }
         }
     });
 }

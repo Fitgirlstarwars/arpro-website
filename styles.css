@@ -369,6 +369,13 @@ ul {
     box-shadow: var(--shadow-sm);
 }
 
+@media (max-width: 767px) {
+    .hero__badge {
+        margin-top: var(--spacing-2xl);
+        margin-bottom: var(--spacing-md);
+    }
+}
+
 .badge-icon {
     display: none;
 }

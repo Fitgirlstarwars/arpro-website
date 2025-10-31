@@ -79,19 +79,15 @@ function initSwiper() {
 
         // Autoplay - Continuous smooth scrolling
         autoplay: {
-            delay: 0,
+            delay: 2000,
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
         },
 
-        // Speed - Smooth continuous movement
-        speed: 5000,
-        freeMode: {
-            enabled: true,
-            momentum: false,
-        },
-        freeModeMomentum: false,
+        // Speed - Smooth transitions
+        speed: 1500,
         allowTouchMove: true,
+        loopAdditionalSlides: 2,
 
         // Responsive Breakpoints - Optimized for mobile with center scaling
         breakpoints: {

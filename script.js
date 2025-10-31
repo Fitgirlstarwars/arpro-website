@@ -87,11 +87,18 @@ function initSwiper() {
         // Speed
         speed: 800,
 
-        // Responsive Breakpoints - Based on Escalated's setup
+        // Responsive Breakpoints - Optimized for mobile
         breakpoints: {
             // Mobile (320px and up)
             320: {
-                slidesPerView: 2,
+                slidesPerView: 2.5,
+                slidesPerGroup: 1,
+                spaceBetween: 15,
+                centeredSlides: false,
+            },
+            // Small tablets (640px and up)
+            640: {
+                slidesPerView: 3,
                 slidesPerGroup: 1,
                 spaceBetween: 20,
             },

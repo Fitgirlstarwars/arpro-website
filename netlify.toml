@@ -10,7 +10,14 @@
 
 # Redirect settings
 [[redirects]]
-  # Redirect www to non-www
+  # Redirect www to non-www for arprofm.com
+  from = "https://www.arprofm.com/*"
+  to = "https://arprofm.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  # Redirect www to non-www for liftsmith.xyz (legacy)
   from = "https://www.liftsmith.xyz/*"
   to = "https://liftsmith.xyz/:splat"
   status = 301

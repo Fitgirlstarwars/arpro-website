@@ -384,22 +384,63 @@ section {
 .hero__badge {
     display: inline-block;
     margin-bottom: var(--spacing-xl);
+    position: relative;
+    padding-bottom: 1rem;
 
-    /* Logo-style typography */
-    font-family: var(--font-heading);
-    font-size: 1.75rem;
-    font-weight: 500;
-    color: var(--color-white);
+    /* Technical geometric typography */
+    font-family: 'Rajdhani', var(--font-heading), sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
     line-height: 1.2;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
+
+    /* Gradient suggesting upward motion */
+    background: linear-gradient(to top, #60a5fa, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* Subtle depth */
+    filter: drop-shadow(0 2px 8px rgba(96, 165, 250, 0.3));
+}
+
+/* Geometric accent lines (suggesting escalator steps/movement) */
+.hero__badge::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        #60a5fa 20%,
+        #ffffff 50%,
+        #60a5fa 80%,
+        transparent 100%
+    );
+    border-radius: 2px;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scaleX(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
 }
 
 @media (max-width: 767px) {
     .hero__badge {
         margin-top: var(--spacing-2xl);
         margin-bottom: var(--spacing-lg);
-        font-size: 1.25rem;
+        font-size: 1.4rem;
+        letter-spacing: 0.1em;
     }
 }
 

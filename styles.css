@@ -382,31 +382,109 @@ section {
 }
 
 .hero__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 1.2rem;
-    background: rgba(255, 255, 255, 0.95);
-    border: none;
-    border-radius: var(--radius-sm);
-    font-size: var(--fs-xs);
-    font-weight: 600;
-    margin-bottom: var(--spacing-lg);
-    color: var(--color-grey-700);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    box-shadow: var(--shadow-sm);
+    display: inline-block;
+    margin-bottom: var(--spacing-xl);
+    background: rgba(255, 255, 255, 0.98);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(37, 99, 235, 0.1);
 }
 
 @media (max-width: 767px) {
     .hero__badge {
         margin-top: var(--spacing-2xl);
-        margin-bottom: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+        padding: 1.25rem 1.5rem;
     }
 }
 
-.badge-icon {
-    display: none;
+.badge-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.badge-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 40px;
+}
+
+.badge-bars .bar {
+    display: block;
+    height: 8px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.badge-bars .bar-1 {
+    width: 40px;
+    background: #1e40af;
+}
+
+.badge-bars .bar-2 {
+    width: 40px;
+    background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+}
+
+.badge-bars .bar-3 {
+    width: 40px;
+    background: #1e40af;
+}
+
+.badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.badge-main {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e40af;
+    line-height: 1;
+    letter-spacing: 0.05em;
+}
+
+.badge-tagline {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #3b82f6;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    line-height: 1;
+}
+
+/* Hover effect */
+.hero__badge:hover .bar {
+    transform: translateX(2px);
+}
+
+@media (max-width: 767px) {
+    .badge-bars {
+        min-width: 32px;
+    }
+
+    .badge-bars .bar {
+        height: 6px;
+    }
+
+    .badge-bars .bar-1,
+    .badge-bars .bar-2,
+    .badge-bars .bar-3 {
+        width: 32px;
+    }
+
+    .badge-main {
+        font-size: 1.5rem;
+    }
+
+    .badge-tagline {
+        font-size: 0.65rem;
+    }
 }
 
 .hero__title {

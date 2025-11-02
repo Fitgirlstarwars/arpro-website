@@ -243,13 +243,14 @@ section {
 }
 
 .nav__link--cta {
-    background: var(--gradient-primary);
-    color: var(--color-white);
+    background: var(--color-white);
+    color: var(--color-primary);
 }
 
 .nav__link--cta:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    background: var(--color-white);
 }
 
 .nav__icon {

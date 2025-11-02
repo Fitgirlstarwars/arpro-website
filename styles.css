@@ -829,11 +829,20 @@ section {
 
 @media (max-width: 480px) {
     .partners__carousel {
-        max-width: 300px;
+        max-width: 100%;
+        padding: var(--spacing-md) var(--spacing-md);
     }
 
     .partner-item {
-        width: 300px;
+        width: 250px;
+    }
+
+    .marquee-content {
+        animation: scroll 25s linear infinite;
+    }
+
+    .partner-logo:hover {
+        transform: none;
     }
 }
 
@@ -844,13 +853,20 @@ section {
     object-fit: contain;
     object-position: center;
     opacity: 0.85;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
     display: block;
+    will-change: transform;
 }
 
 .partner-logo:hover {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+@media (hover: none) {
+    .partner-logo:hover {
+        transform: none;
+    }
 }
 
 /* Visual balance adjustments for similar perceived size */

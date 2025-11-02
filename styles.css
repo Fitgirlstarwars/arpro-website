@@ -237,6 +237,16 @@ section {
     background: var(--color-grey-50);
 }
 
+.header.scrolled .nav__link--cta {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.header.scrolled .nav__link--cta:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
 .nav__link:hover {
     color: var(--color-primary);
     background: var(--color-grey-50);

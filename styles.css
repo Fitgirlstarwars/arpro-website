@@ -772,7 +772,7 @@ section {
 }
 
 .partners__carousel {
-    max-width: 100%;
+    max-width: 900px;
     margin: 0 auto;
     padding: var(--spacing-lg) 0;
     overflow: hidden;
@@ -797,7 +797,7 @@ section {
 
 .marquee-content {
     display: flex;
-    animation: scroll 30s linear infinite;
+    animation: scroll 20s linear infinite;
     width: fit-content;
 }
 
@@ -811,9 +811,30 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 300px;
     padding: 0 60px;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .partners__carousel {
+        max-width: 600px;
+    }
+
+    .partner-item {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners__carousel {
+        max-width: 300px;
+    }
+
+    .partner-item {
+        width: 300px;
+    }
 }
 
 .partner-logo {

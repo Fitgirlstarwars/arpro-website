@@ -842,10 +842,6 @@ section {
     .marquee-content {
         animation: scroll 25s linear infinite;
     }
-
-    .partner-logo:hover {
-        transform: translateZ(0);
-    }
 }
 
 .partner-logo {
@@ -861,6 +857,19 @@ section {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
+    pointer-events: none;
+}
+
+/* Prevent marquee from pausing on any hover */
+.marquee-content,
+.marquee-content:hover,
+.partner-item:hover,
+.partner-logo:hover {
+    animation-play-state: running !important;
+}
+
+.marquee:hover .marquee-content {
+    animation-play-state: running !important;
 }
 
 /* === CONTACT SECTION === */

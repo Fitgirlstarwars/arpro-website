@@ -92,40 +92,26 @@ function initContactForm() {
 
             // Get form data
             const formData = new FormData(form);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                message: formData.get('message'),
-            };
 
-            // Log data (replace with actual API call)
-            console.log('Form submitted:', data);
-
-            // Show success message
-            showFormMessage('success', 'Thank you! Your message has been sent successfully.');
-
-            // Reset form
-            form.reset();
-
-            /*
-            // Example: Send to API endpoint
-            fetch('/api/contact', {
+            // Submit to Formspree
+            fetch(form.action, {
                 method: 'POST',
+                body: formData,
                 headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
+                    'Accept': 'application/json'
+                }
             })
-            .then(response => response.json())
-            .then(result => {
-                showFormMessage('success', 'Thank you! Your message has been sent successfully.');
-                form.reset();
+            .then(response => {
+                if (response.ok) {
+                    showFormMessage('success', 'Thank you! Your message has been sent successfully.');
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
             })
             .catch(error => {
                 showFormMessage('error', 'Sorry, something went wrong. Please try again.');
             });
-            */
         });
     }
 }

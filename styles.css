@@ -806,10 +806,7 @@ section {
     -webkit-perspective: 1000px;
 }
 
-/* Pause on hover */
-.marquee-content:hover {
-    animation-play-state: paused;
-}
+/* Continuous scroll - no pause on hover */
 
 .partner-item {
     flex-shrink: 0;
@@ -818,8 +815,6 @@ section {
     justify-content: center;
     width: 300px;
     padding: 0 60px;
-    text-decoration: none;
-    cursor: pointer;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
 }
@@ -856,49 +851,16 @@ section {
 .partner-logo {
     height: 50px;
     width: auto;
-    max-width: 140px;
+    max-width: 160px;
     object-fit: contain;
     object-position: center;
-    opacity: 0.85;
-    transition: opacity 0.3s ease;
+    opacity: 1;
     display: block;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
-}
-
-.partner-logo:hover {
-    opacity: 1;
-    transform: scale(1.05) translateZ(0);
-}
-
-@media (hover: none) {
-    .partner-logo:hover {
-        transform: translateZ(0);
-    }
-}
-
-/* Visual balance adjustments for similar perceived size */
-.partner-item:nth-child(1) .partner-logo,
-.partner-item:nth-child(5) .partner-logo {
-    height: 50px; /* KONE baseline */
-}
-
-.partner-item:nth-child(2) .partner-logo,
-.partner-item:nth-child(6) .partner-logo {
-    height: 48px; /* TK Elevator slightly smaller */
-}
-
-.partner-item:nth-child(3) .partner-logo,
-.partner-item:nth-child(7) .partner-logo {
-    height: 60px; /* Schindler larger - has emblem above text */
-}
-
-.partner-item:nth-child(4) .partner-logo,
-.partner-item:nth-child(8) .partner-logo {
-    height: 40px; /* OTIS smaller - bold and wide */
 }
 
 /* === CONTACT SECTION === */
